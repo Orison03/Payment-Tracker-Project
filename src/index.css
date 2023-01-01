@@ -27,7 +27,7 @@ body{
   padding: 2rem 0;
 }
 
-.btn{
+.clear-btn{
   padding: 5px 12px;
   font-weight: bold;
   color: black;
@@ -41,8 +41,28 @@ body{
   box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+.clear-btn:hover{
+  color: #ECC249;
+}
+.btn{
+  text-align: center;
+  width: 100%;
+  padding: 7px 0;
+  margin-top: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: white;
+  border-radius: 10px;
+  border: transparent;
+  cursor: pointer;
+  box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 .btn:hover{
-  color: #118AF4;
+  color: #ECC249;
 }
 
 .alert{
@@ -72,16 +92,16 @@ label{
 }
 
 input{
-   width: 80%;
+   width: 100%;
    display: block;
    padding-left: 10px;
-   padding-top: 3px;
-   padding-bottom: 3px;
+   padding-top: 7px;
+   padding-bottom: 7px;
    margin-top: 10px;
    margin-bottom: 14px;
    font-weight: bold;
    letter-spacing: .3px;
-   border-radius: 1px;
+   border-radius: 10px;
    border: none;
 }
 

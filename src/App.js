@@ -72,7 +72,7 @@ function App() {
       </form>
       <div className="grocery-container">
         <Items />
-        <button className="btn" type="submit">
+        <button className="clear-btn" type="submit">
           clear items
         </button>
       </div>
