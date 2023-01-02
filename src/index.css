@@ -135,16 +135,17 @@ input:focus{
   outline: none;
 }
 
-.grocery-List{
+.payment-List{
   background-color: white;
-  width: 120%;
+  width: 130%;
   border-radius: 3%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
 }
 
-.grocery-Item{
+.payment-Item{
   display: flex;
   justify-content: space-between;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
 }
 
 .narration{
@@ -152,9 +153,36 @@ input:focus{
 }
 
 .item-title{
-  color: #ECC249;
+  color: black;
 }
 
-.narration-Item{
-  color: #ECC249;
+.narration-title{
+  color: black;
+  padding-left: 3rem;
+}
+
+.item-heading{
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.narration-textarea{
+  width: 100%;
+  display: block;
+  padding-top: 7px;
+   padding-bottom: 7px;
+   margin-top: 10px;
+   margin-bottom: 14px;
+   font-weight: bold;
+   letter-spacing: .3px;
+   border-radius: 10px;
+   border: none;
+   padding-left: 3rem;
+   padding-right: 1rem;
+}
+
+.narration-textarea:focus{
+  outline: none;
 }
