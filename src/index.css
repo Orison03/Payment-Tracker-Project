@@ -23,12 +23,12 @@ body{
 
 .grocery-container{
   margin-top: 2rem;
-  text-align: center;
+  margin-left: .5rem;
   padding: 2rem 0;
 }
 
 .clear-btn{
-  padding: 5px 12px;
+  padding: 7px 15px;
   font-weight: bold;
   color: black;
   letter-spacing: 1px;
@@ -39,10 +39,16 @@ body{
   border: transparent;
   cursor: pointer;
   box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all .5s ease-in-out;
+}
+
+.clearBtn-container{
+  text-align: center;
 }
 
 .clear-btn:hover{
-  color: #ECC249;
+  background-color: #ECC249;
+  color: white;
 }
 .btn{
   text-align: center;
@@ -59,10 +65,12 @@ body{
   border: transparent;
   cursor: pointer;
   box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all .5s ease-in-out;
 }
 
 .btn:hover{
-  color: #ECC249;
+  background-color: #ECC249;
+  color: white;
 }
 
 .alert{
@@ -83,7 +91,7 @@ body{
 
 .form-control{
   padding-top: 2rem;
-  padding-left: 1.4rem;
+  padding-left: .5rem;
 }
 
 label{
@@ -105,6 +113,48 @@ input{
    border: none;
 }
 
+textarea{
+  width: 100%;
+  display: block;
+  padding-left: 10px;
+  padding-top: 7px;
+   padding-bottom: 7px;
+   margin-top: 10px;
+   margin-bottom: 14px;
+   font-weight: bold;
+   letter-spacing: .3px;
+   border-radius: 10px;
+   border: none;
+}
+
+textarea:focus{
+  outline: none;
+}
+
 input:focus{
   outline: none;
+}
+
+.grocery-List{
+  background-color: white;
+  width: 120%;
+  border-radius: 3%;
+}
+
+.grocery-Item{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+}
+
+.narration{
+  text-overflow: none;
+}
+
+.item-title{
+  color: #ECC249;
+}
+
+.narration-Item{
+  color: #ECC249;
 }

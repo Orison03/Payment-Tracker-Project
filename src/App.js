@@ -9,6 +9,7 @@ function App() {
     amount: "",
     payTo: "",
     paymentName: "",
+    narration: "",
   });
   // const [date, setDate] = useState("");
   // const [amount, setAmount] = useState("");
@@ -18,65 +19,115 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
   const [alert, setAlert] = useState({ show: false, type: "", msg: "" });
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      !payment.paymentName &&
+      !payment.amount &&
+      !payment.date &&
+      !payment.payTo &&
+      !payment.narration
+    ) {
+      //  display alert
+    } else if (
+      payment.name &&
+      payment.amount &&
+      payment.date &&
+      payment.payTo &&
+      payment.narration &&
+      isEditing
+    ) {
+      // deal with edit
+    } else {
+      // show alert
+      const newItem = {
+        id: new Date().getTime().toString(),
+        date: payment.date,
+        paymentName: payment.paymentName,
+        payTo: payment.payTo,
+        amount: payment.amount,
+        narration: payment.narration,
+      };
+      setList([...list,newItem])
+      setPayment({
+        date: "",
+        amount: "",
+        payTo: "",
+        paymentName: "",
+        narration: "",
+      });
+    }
   };
+
   const handleChange = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-    setPayment({...payment,[name]:value})
-  }
+    const name = e.target.name;
+    const value = e.target.value;
+    setPayment({ ...payment, [name]: value });
+  };
   return (
-    <section className="section-center">
-      <form onSubmit={handleSubmit}>
-        {alert.show && <Alert />}
-        <h3 className="title">Payment Tracker</h3>
-        <div className="form-control">
-          <label htmlFor="date">Date</label>
-          <input
-            type="date"
-            id="date"
-            value={payment.date}
-            name="date"
-            onChange={handleChange}
-          />
-          <label htmlFor="paymentName">Payment Name</label>
-          <input
-            type="text"
-            placeholder="enter payment name"
-            id="paymentName"
-            value={payment.paymentName}
-            name="paymentName"
-            onChange={handleChange}
-          />
-          <label htmlFor="date">Pay To</label>
-          <input
-            type="text"
-            placeholder="enter the receiver name"
-            id="payTo"
-            name="payTo"
-            value={payment.payTo}
-            onChange={handleChange}
-          />
-          <label htmlFor="amount">Amount</label>
-          <input
-            type="number"
-            id="amount"
-            name="amount"
-            placeholder="enter your amount"
-            value={payment.amount}
-            onChange={handleChange}
-          />
-          <button className="btn">{isEditing ? "Edit" : "Submit"}</button>
-        </div>
-      </form>
+    <>
+      <section className="section-center">
+        <form onSubmit={handleSubmit}>
+          {alert.show && <Alert />}
+          <h3 className="title">Payment Tracker</h3>
+          <div className="form-control">
+            <label htmlFor="date">Date</label>
+            <input
+              type="date"
+              id="date"
+              value={payment.date}
+              name="date"
+              onChange={handleChange}
+            />
+            <label htmlFor="paymentName">Payment Name</label>
+            <input
+              type="text"
+              placeholder="enter payment name"
+              id="paymentName"
+              value={payment.paymentName}
+              name="paymentName"
+              onChange={handleChange}
+            />
+            <label htmlFor="date">Pay To</label>
+            <input
+              type="text"
+              placeholder="enter the receiver name"
+              id="payTo"
+              name="payTo"
+              value={payment.payTo}
+              onChange={handleChange}
+            />
+            <label htmlFor="amount">Amount</label>
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              placeholder="enter your amount"
+              value={payment.amount}
+              onChange={handleChange}
+            />
+            <label htmlFor="narration">Narration</label>
+            <textarea
+              id="narration"
+              name="narration"
+              value={payment.narration}
+              onChange={handleChange}
+              rows="6"
+            />
+            <button className="btn">{isEditing ? "Edit" : "Submit"}</button>
+          </div>
+        </form>
+      </section>
       <div className="grocery-container">
-        <Items />
-        <button className="clear-btn" type="submit">
-          clear items
-        </button>
+        <Items items={list} />
+        <section className="clearBtn-container">
+          <button className="clear-btn" type="button">
+            clear items
+          </button>
+        </section>
       </div>
-    </section>
+    </>
   );
 }
 
