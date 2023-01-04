@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function Alert() {
+function Alert({msg,removeAlert,tracks}) {
+    useEffect(()=>{
+    const timeout = setTimeout(()=>{
+       removeAlert()
+       return () => clearTimeout(timeout)
+    },4000)
+    },[tracks])
   return (
     <>
-      <h4 className='alert'>Alert</h4>
+      <h5 className="alert">{msg}</h5>
     </>
   );
 }

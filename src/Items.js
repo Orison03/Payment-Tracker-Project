@@ -1,6 +1,6 @@
 import React from "react";
-
-function Items({ items }) {
+import { BiDownvote } from "react-icons/bi";
+function Items({ items, removeTrack,editTrack }) {
   return (
     <div>
       {items.map((item) => {
@@ -26,10 +26,14 @@ function Items({ items }) {
                   <p className="item-title">Amount</p>
                   <p>${amount}.00</p>
                 </div>
-                <p className="narration-title">Narration is indicated below</p>
-                <textarea rows="6" cols="3" className="narration-textarea">
+                <p className="narration-title">Narration indicated below <BiDownvote className="below"/></p>
+                <textarea rows="4" cols="4" className="narration-textarea" readOnly>
                   {narration}
                 </textarea>
+                <div className="btn-container">
+                     <button className="edit-btn" onClick={() => editTrack(id)}>edit</button>
+                     <button className="delete-btn" onClick={()=> removeTrack(id)}>delete</button>
+                </div>
               </section>
             </article>
           </>

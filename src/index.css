@@ -17,7 +17,7 @@ body{
 .section-center{
   /* background-color: white; */
   width: 90vw;
-  margin: 0rem auto;
+  margin: 2rem auto;
   border-radius: 10px;
 }
 
@@ -73,14 +73,6 @@ body{
   color: white;
 }
 
-.alert{
-  text-align: center;
-  padding-top: 1rem;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  font: bold;
-}
-
 .title{
   text-align: center;
   text-transform: capitalize;
@@ -122,9 +114,10 @@ textarea{
    margin-top: 10px;
    margin-bottom: 14px;
    font-weight: bold;
-   letter-spacing: .3px;
+   letter-spacing: .4px;
    border-radius: 10px;
    border: none;
+   resize: none;
 }
 
 textarea:focus{
@@ -185,4 +178,65 @@ input:focus{
 
 .narration-textarea:focus{
   outline: none;
+}
+
+.below{
+  padding-top:3px;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 3rem 2rem 3rem;
+}
+
+.edit-btn{
+  padding: 7px 15px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: #ECC249;
+  font-size: 16px;
+  border-radius: 10px;
+  border: transparent;
+  cursor: pointer;
+  box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all .2s ease-in-out;
+}
+
+.edit-btn:hover{
+  color: white;
+}
+.delete-btn{
+  padding: 7px 15px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: #ECC249;
+  font-size: 16px;
+  border-radius: 10px;
+  border: transparent;
+  cursor: pointer;
+  box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all .5s ease-in-out;
+}
+
+.delete-btn:hover{
+  color: white;
+}
+
+.alert{
+  color: white;
+  background-color: #040C0C;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: .5rem 0;
+  border-radius: 5%;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.3);
 }
